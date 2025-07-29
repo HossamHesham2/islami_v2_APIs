@@ -21,6 +21,16 @@ class StylesManager {
     fontSize: 20,
     color: ColorsManager.gold,
   );
+  static TextStyle bold20Black = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+    color: ColorsManager.black,
+  );
+  static TextStyle bold16Black = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+    color: ColorsManager.black,
+  );
   static TextStyle bold16Gold = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 16,

@@ -26,6 +26,9 @@ class AssetsManager {
   static const String onBoard5 = "${base}onBoard5.png";
   static const String sebhaBody = "${base}sebha_body.png";
   static const String sebhaHead = "${base}sebha_head.png";
+  static const String musicPlay = "${base}music_play.png";
+  static const String radioComponentBg = "${base}radio_component_bg.png";
+  static const String soundWave = "${base}sound_wave.png";
 
 
 
