@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:equatable/equatable.dart';
 import 'package:islami_v2/models/reciters_model.dart';
 import 'package:flutter/material.dart';
 

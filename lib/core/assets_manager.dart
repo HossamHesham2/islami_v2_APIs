@@ -17,7 +17,8 @@ class AssetsManager {
   static const String cornerLeft = "${base}corner_left.png";
   static const String cornerRight = "${base}corner_right.png";
   static const String hadithCorners = "${base}hadith_corners.png";
-  static const String hadithCardBackGround = "${base}HadithCardBackGround 1.png";
+  static const String hadithCardBackGround =
+      "${base}HadithCardBackGround 1.png";
   static const String mosque2 = "${base}mosque_2.png";
   static const String onBoard1 = "${base}onBoard1.png";
   static const String onBoard2 = "${base}onBoard2.png";
@@ -29,7 +30,9 @@ class AssetsManager {
   static const String musicPlay = "${base}music_play.png";
   static const String radioComponentBg = "${base}radio_component_bg.png";
   static const String soundWave = "${base}sound_wave.png";
-
-
-
+  static const String prayTimeBg = "${base}pray_time_bg.png";
+  static const String azkar1 = "${base}azkar1.png";
+  static const String azkar2 = "${base}azkar2.png";
+  static const String azkar3 = "${base}azkar3.png";
+  static const String azkar4 = "${base}azkar4.png";
 }
