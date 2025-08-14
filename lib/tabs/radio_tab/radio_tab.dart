@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_v2/core/assets_manager.dart';
 import 'package:islami_v2/core/colors_manager.dart';
 import 'package:islami_v2/core/controller/radio_cubit/radio_cubit.dart';
@@ -56,12 +57,12 @@ class _RadioTabState extends State<RadioTab> {
                       setState(() {});
                     },
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 8),
+                      padding: EdgeInsets.symmetric(vertical: 8.h),
                       decoration: BoxDecoration(
                         color: selectedIndex == 0
                             ? ColorsManager.gold
                             : ColorsManager.transParentColor,
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(16.r),
                       ),
                       alignment: Alignment.center,
                       child: Text(
@@ -81,9 +82,9 @@ class _RadioTabState extends State<RadioTab> {
                       setState(() {});
                     },
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 8),
+                      padding: EdgeInsets.symmetric(vertical: 8.h),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(16.r),
                         color: selectedIndex == 1
                             ? ColorsManager.gold
                             : ColorsManager.transParentColor,
@@ -101,7 +102,7 @@ class _RadioTabState extends State<RadioTab> {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
           selectedIndex == 0
               ? Expanded(
             child: BlocProvider(
@@ -120,11 +121,11 @@ class _RadioTabState extends State<RadioTab> {
                     return ListView.separated(
                       itemBuilder: (context, index) {
                         return Container(
-                          padding: EdgeInsets.symmetric(vertical: 13),
+                          padding: EdgeInsets.symmetric(vertical: 13.h),
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: ColorsManager.gold,
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                             image: DecorationImage(
                               image: AssetImage(
                                 isPlaying && currentIndex == index
@@ -142,7 +143,7 @@ class _RadioTabState extends State<RadioTab> {
                                 state.radioList[index].name,
                                 style: StylesManager.bold20Black,
                               ),
-                              SizedBox(height: 30),
+                              SizedBox(height: 30.h),
                               Row(
                                 mainAxisAlignment:
                                 MainAxisAlignment.center,
@@ -178,7 +179,7 @@ class _RadioTabState extends State<RadioTab> {
                                               currentIndex == index
                                               ? Icons.pause
                                               : Icons.play_arrow,
-                                          size: 40,
+                                          size: 40.sp,
                                           color: ColorsManager.black,
                                         ),
                                       ),
@@ -197,7 +198,7 @@ class _RadioTabState extends State<RadioTab> {
                                           isMuted && currentIndex == index
                                               ? Icons.volume_off
                                               : Icons.volume_up,
-                                          size: 40,
+                                          size: 40.sp,
                                           color: ColorsManager.black,
                                         ),
                                       ),
@@ -210,7 +211,7 @@ class _RadioTabState extends State<RadioTab> {
                         );
                       },
                       separatorBuilder: (context, index) =>
-                          SizedBox(height: 20),
+                          SizedBox(height: 20.h),
                       itemCount: state.radioList.length,
                     );
                   } else {
@@ -237,11 +238,11 @@ class _RadioTabState extends State<RadioTab> {
                     return ListView.separated(
                       itemBuilder: (context, index) {
                         return Container(
-                          padding: EdgeInsets.symmetric(vertical: 13),
+                          padding: EdgeInsets.symmetric(vertical: 13.h),
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: ColorsManager.gold,
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                             image: DecorationImage(
                               image: AssetImage(
                                   isPlaying && currentIndex == index
@@ -259,7 +260,7 @@ class _RadioTabState extends State<RadioTab> {
                                 state.recitersList[index].name,
                                 style: StylesManager.bold20Black,
                               ),
-                              SizedBox(height: 30),
+                              SizedBox(height: 30.h),
                               Row(
                                 mainAxisAlignment:
                                 MainAxisAlignment.center,
@@ -293,7 +294,7 @@ class _RadioTabState extends State<RadioTab> {
                                         },
                                         child: Icon(
                                           isPlaying && currentIndex == index ?Icons.pause:Icons.play_arrow,
-                                          size: 40,
+                                          size: 40.sp,
                                           color: ColorsManager.black,
                                         ),
                                       ),
@@ -312,7 +313,7 @@ class _RadioTabState extends State<RadioTab> {
                                           isMuted && currentIndex == index
                                               ? Icons.volume_off
                                               : Icons.volume_up,
-                                          size:40,
+                                          size:40.sp,
                                           color: ColorsManager.black,
                                         ),
                                       ),
@@ -325,7 +326,7 @@ class _RadioTabState extends State<RadioTab> {
                         );
                       },
                       separatorBuilder: (context, index) =>
-                          SizedBox(height: 20),
+                          SizedBox(height: 20.h),
                       itemCount: state.recitersList.length,
                     );
                   } else {

@@ -15,12 +15,12 @@ class SuraDetailsScreen1 extends StatefulWidget {
 class _SuraDetailsScreen1State extends State<SuraDetailsScreen1> {
   String suraContent = "";
   late int index;
+
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
-    
   }
+
   @override
   void didChangeDependencies() {
     index = ModalRoute.of(context)?.settings.arguments as int;

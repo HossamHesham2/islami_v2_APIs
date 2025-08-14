@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_v2/core/assets_manager.dart';
 import 'package:islami_v2/core/colors_manager.dart';
 import 'package:islami_v2/models/hadith_model.dart';
@@ -33,13 +34,13 @@ class _HadithTabState extends State<HadithTab> {
             ),
             items: hadithList.map((hadith) {
               return Container(
-                margin: EdgeInsets.symmetric(vertical: 20),
+                margin: EdgeInsets.symmetric(vertical: 20.h),
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(AssetsManager.hadithCardBackGround),
                   ),
                   color: ColorsManager.gold,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: Column(
                   children: [
@@ -75,7 +76,7 @@ class _HadithTabState extends State<HadithTab> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     Image.asset(
                       AssetsManager.mosque2,
                       width: double.infinity,

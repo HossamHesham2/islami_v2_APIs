@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_v2/core/assets_manager.dart';
 import 'package:islami_v2/core/styles_manager.dart';
 
@@ -33,35 +34,35 @@ class _SebhaTabState extends State<SebhaTab> {
 
     return Column(
       children: [
-        const SizedBox(height: 40),
+         SizedBox(height: 40.h),
         Text("سَبِّحِ اسْمَ رَبِّكَ الأعلى ", style: StylesManager.bold36White),
-        const SizedBox(height: 40),
+         SizedBox(height: 40.h),
         Image.asset(AssetsManager.sebhaHead),
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            AnimatedRotation(
-              duration: const Duration(milliseconds: 250),
-              turns: turns,
-              child: GestureDetector(
-                onTap: () => setState(() {
-                  turns += 0.1;
-                  currentCount++;
-                  if (maxCount != null && currentCount >= maxCount) {
-                    currentIndex = (currentIndex + 1) % tasbeehList.length;
-                    currentCount = 0;
-                  }
-                }),
+        GestureDetector(
+          onTap: () => setState(() {
+            turns += 0.1;
+            currentCount++;
+            if (maxCount != null && currentCount >= maxCount) {
+              currentIndex = (currentIndex + 1) % tasbeehList.length;
+              currentCount = 0;
+            }
+          }),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              AnimatedRotation(
+                duration: const Duration(milliseconds: 250),
+                turns: turns,
                 child: Image.asset(AssetsManager.sebhaBody),
               ),
-            ),
-            Column(
-              children: [
-                Text(currentTasbeeh['text'], style: StylesManager.bold36White),
-                Text(currentCount.toString(), style: StylesManager.bold36White),
-              ],
-            ),
-          ],
+              Column(
+                children: [
+                  Text(currentTasbeeh['text'], style: StylesManager.bold36White),
+                  Text(currentCount.toString(), style: StylesManager.bold36White),
+                ],
+              ),
+            ],
+          ),
         ),
       ],
     );

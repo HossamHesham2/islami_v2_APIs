@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_v2/core/assets_manager.dart';
 import 'package:islami_v2/core/colors_manager.dart';
 import 'package:islami_v2/core/routes_manager.dart';
@@ -34,7 +35,7 @@ class _QuranTabState extends State<QuranTab> {
           sura.suraNum.toString() == searchQuery;
     }).toList();
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,18 +57,18 @@ class _QuranTabState extends State<QuranTab> {
                 hintText: "Sura Name",
                 hintStyle: StylesManager.bold16White,
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: BorderSide(color: ColorsManager.gold, width: 2),
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide(color: ColorsManager.gold, width: 2.w),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: BorderSide(color: ColorsManager.gold, width: 2),
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide(color: ColorsManager.gold, width: 2.w),
                 ),
               ),
             ),
-            SizedBox(height: height * 0.02),
+            SizedBox(height: 20.h),
             MostRecentWidget(),
-            SizedBox(height: height * 0.02),
+            SizedBox(height:20.h),
             Text("Sura List", style: StylesManager.bold16White),
             ListView.separated(
               physics: NeverScrollableScrollPhysics(),
@@ -80,7 +81,7 @@ class _QuranTabState extends State<QuranTab> {
                     Provider.of<MostRecentProvider>(
                       context,
                       listen: false,
-                    ).addSura(sura.suraNum); // ✅ استخدمنا البروفايدر
+                    ).addSura(sura.suraNum);
                     await Navigator.pushNamed(
                       context,
                       RoutesManager.suraDetails,
@@ -100,7 +101,7 @@ class _QuranTabState extends State<QuranTab> {
                           ),
                         ],
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -121,10 +122,10 @@ class _QuranTabState extends State<QuranTab> {
                 );
               },
               separatorBuilder: (context, index) => Divider(
-                indent: width * 0.1,
-                endIndent: width * 0.1,
+                indent:  15.w,
+                endIndent:  15.w,
                 color: ColorsManager.white,
-                thickness: 2,
+                thickness: 2.h,
               ),
               itemCount: filteredSurahs.length,
             ),

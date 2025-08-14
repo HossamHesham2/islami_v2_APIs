@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_v2/core/assets_manager.dart';
 import 'package:islami_v2/core/colors_manager.dart';
 import 'package:islami_v2/tabs/hadith_tab/hadith_tab.dart';
@@ -106,9 +107,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }) {
     return selectedIndex == index
         ? Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(66),
+              borderRadius: BorderRadius.circular(66.r),
               color: ColorsManager.black.withOpacity(0.6),
             ),
             child: ImageIcon(AssetImage(iconPath)),

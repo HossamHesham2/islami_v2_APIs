@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:islami_v2/core/assets_manager.dart';
 import 'package:islami_v2/core/colors_manager.dart';
@@ -163,10 +164,10 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
 
           return Container(
             width: double.infinity,
-            height: 300,
+            height: 300.h,
             decoration: BoxDecoration(
               color: ColorsManager.brown85,
-              borderRadius: BorderRadius.circular(40),
+              borderRadius: BorderRadius.circular(40.r),
               image: DecorationImage(
                 image: AssetImage(AssetsManager.prayTimeBg),
                 fit: BoxFit.fill,
@@ -177,11 +178,11 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(width: 20),
+                    SizedBox(width: 20.w),
                     Expanded(
                       child: Text(
                         currentDateFormatted,
-                        style: StylesManager.bold16White.copyWith(fontSize: 20),
+                        style: StylesManager.bold16White.copyWith(fontSize: 18.sp),
                         softWrap: true,
                       ),
                     ),
@@ -189,21 +190,21 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                       flex: 3,
                       child: Column(
                         children: [
-                          SizedBox(height: 10),
+                          SizedBox(height: 10.h),
                           Text(
                             "Pray Time",
                             style: StylesManager.bold16Black.copyWith(
                               color: ColorsManager.black.withOpacity(0.71),
-                              fontSize: 20,
+                              fontSize: 20.sp,
                             ),
                             softWrap: true,
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10.h),
                           Text(
                             prayResponse.data?.date!.hijri!.weekday!.en ?? "",
                             style: StylesManager.bold16Black.copyWith(
                               color: ColorsManager.black.withOpacity(0.9),
-                              fontSize: 20,
+                              fontSize: 20.sp,
                             ),
                           ),
                         ],
@@ -214,17 +215,17 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                         convertHijri(
                           prayResponse.data?.date!.hijri!.date ?? "Null",
                         ),
-                        style: StylesManager.bold16White.copyWith(fontSize: 20),
+                        style: StylesManager.bold16White.copyWith(fontSize: 18.sp),
                         softWrap: true,
                       ),
                     ),
-                    SizedBox(width: 20),
+                    SizedBox(width: 20.w),
                   ],
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 Expanded(
                   child: ListView.separated(
-                    separatorBuilder: (context, index) => SizedBox(width: 10),
+                    separatorBuilder: (context, index) => SizedBox(width: 10.w),
                     scrollDirection: Axis.horizontal,
                     itemCount: prayers.length,
                     itemBuilder: (context, index) {
@@ -233,8 +234,8 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                       ).parse(prayers[index]['prayTime']);
                       String time12 = DateFormat("hh:mm a").format(dateTime);
                       return Container(
-                        height: 130,
-                        width: 105,
+                        height: 130.h,
+                        width: 105.w,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
@@ -244,7 +245,7 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                           ),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(20.r),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -252,14 +253,15 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                             Text(
                               prayers[index]['prayName'],
                               style: StylesManager.bold16White.copyWith(
-                                fontSize: 20,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w600
                               ),
                             ),
                             Text(
                               textAlign: TextAlign.center,
                               time12,
                               style: StylesManager.bold16White.copyWith(
-                                fontSize: 25,
+                                fontSize: 25.sp,
                               ),
                             ),
                           ],
@@ -278,13 +280,13 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                             text: "Next Pray - ",
                             style: StylesManager.bold16Black.copyWith(
                               color: ColorsManager.black.withOpacity(0.5),
-                              fontSize: 20,
+                              fontSize: 20.sp,
                             ),
                           ),
                           TextSpan(
                             text: _getNextPrayerTime(prayers),
                             style: StylesManager.bold16Black.copyWith(
-                              fontSize: 20,
+                              fontSize: 20.sp,
                             ),
                           ),
                         ],
@@ -292,11 +294,11 @@ class _PrayItemWidgetState extends State<PrayItemWidget> {
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.volume_mute, size: 30),
+                      icon: Icon(Icons.volume_mute, size: 30.sp),
                     ),
                   ],
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
               ],
             ),
           );
